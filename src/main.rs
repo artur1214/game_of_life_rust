@@ -67,7 +67,6 @@ impl Life {
     }
     
     fn next(&mut self) {
-        
         self.field = self.field.iter().enumerate().map(|(row_idx, row)| {
             row.iter().enumerate().map(|(col, cell) |{
                 let alives = self.live_neighbor_count(row_idx, col);
@@ -91,7 +90,6 @@ fn main() {
     }
 
     let mut life = Life::new(filename);
-    println!("{:?}", life);
     for _ in 0..20{
         life.next();
         for i in 0..life.size[0]{
